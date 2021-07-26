@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        /*
+        Объявить две переменные a и b и задать им целочисленные произвольные начальные
+        значения.
+        Затем написать скрипт, который работает по следующему принципу:
+        - если a и b положительные, вывести их разность (ноль можно считать положительным числом);
+        - если а и b отрицательные, вывести их произведение;
+        - * (этот пункт по сложнее, делайте по желанию) если а и b разных знаков, вывести их сумму;
+        */
+
+        /**
+         * Returns a random integer number up to ${num}
+         * @param {number} num - integer
+         * @returns {number}
+         */
+        function getRandomNumber(num) {
+            return (Math.random() * num).toFixed();
+        }
+
+        function makePosOrNot(number) {
+            const minusAndPlus = [1, -1];
+            let numberSign = minusAndPlus[getRandomNumber(minusAndPlus.length - 1)];
+            return numberSign * number;
+        }
+
+        const upTo = 100;
+
+        let a = makePosOrNot(getRandomNumber(upTo));
+        let b = makePosOrNot(getRandomNumber(upTo));
+
+
+        function main(num1, num2) {
+            if (num1 >= 0 && num2 >= 0) {
+                return num1 - num2;
+            } else if (num1 < 0 && num2 < 0) {
+                return num1 * num2;
+            } else return num1 + num2
+        }
+
+        let result = main(a, b);
+
+        alert(`Результат:  ${result} \n a = ${a} \n b = ${b}`)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="task4.js"></script>
+    <script>
+        'use strict'
+
+        /* 5. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. 
+        В зависимости от переданного значения операции (использовать switch) 
+        выполнить одну из арифметических операций (использовать функции из задания 4) 
+        и вернуть полученное значение. */
+
+
+        /**
+         * Implements mathematical operations: addition, subtraction, multiplication and division
+         * @param {number} arg1
+         * @param {number} arg2
+         * @param {string} operation - can be '+', '-', '/' or '*'
+         * @trows {Error} in case of undefined operator
+         * @returns {number}
+         */
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    return add(arg1, arg2);
+                case "-":
+                    return sub(arg1, arg2);
+                case "/":
+                    return div(arg1, arg2);
+                case "*":
+                    return mul(arg1, arg2);
+                default:
+                    throw new Error(`Невозможная операция ${operation}`);
+            }
+        }
+
+        console.log(mathOperation(2, 5.3, '-'))
+        console.log(mathOperation(2, -5.3, '/'))
+        console.log(mathOperation(2, -5.3, '='))
+
+
+
+    </script>
+
+</body>
+
+</html>

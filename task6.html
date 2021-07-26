@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        /*
+        Программа должна спросить у пользователя число, это будет количество денег, которое он хочет
+        положить на счет в банке. Затем программа должна выдать примерно такое сообщение:
+        "Ваша сумма в 101 рубль успешно зачислена." - в случае если пользователь ввел 101.
+        "Ваша сумма в 10020 рублей успешно зачислена." - в случае если пользователь ввел 10020.
+        "Ваша сумма в 120104 рубля успешно зачислена." - в случае если пользователь ввел 120104.
+        То есть ваша задача выводить слово «рубль» в правильном падеже, в зависимости от введенного
+        числа.
+        */
+
+
+        /**
+         * Makes the case of the word "рубль" correct
+         * @param {number} num
+         * @returns {string}
+         */
+        function getCorrectCase(num) {
+            let number = String(parseInt(num));
+
+            // penultimateChar = "" if number.length < 2
+            let penultimateChar = number.charAt(number.length - 2);
+            if (penultimateChar == 1) {
+                return 'рублей';
+            }
+
+            let lastDigit = number.charAt(number.length - 1);
+            if (/0|[5-9]/.test(lastDigit)) {
+                return "рублей";
+            } else if (lastDigit == 1) {
+                return "рубль";
+            } else {
+                return "рубля";
+            }
+        }
+
+        let money = Number(prompt('Введите сумму в рублях, которое хотите положить на счёт: '))
+        alert(`Ваша сумма в ${money} ${getCorrectCase(money)} успешно зачислена.`)
+
+    </script>
+
+</body>
+
+</html>

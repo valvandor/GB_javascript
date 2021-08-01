@@ -39,11 +39,11 @@
             let lastDigit = number.charAt(number.length - 1);
             if (/0|[5-9]/.test(lastDigit)) {
                 return "рублей";
-            } else if (lastDigit == 1) {
-                return "рубль";
-            } else {
-                return "рубля";
             }
+            if (lastDigit == 1) {
+                return "рубль";
+            }
+            return "рубля";
         }
 
         let money = Number(prompt('Введите сумму в рублях, которое хотите положить на счёт: '))

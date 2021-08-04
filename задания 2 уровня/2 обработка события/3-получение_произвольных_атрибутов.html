@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="modal fade" 
-         id="exampleModal" 
-         tabindex="-1" 
-         aria-labelledby="exampleModalLabel" 
-         aria-hidden="true">
-		текст
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        текст
     </div>
 
     <!-- 
@@ -21,5 +19,18 @@
     3. При клике из event.target c помощью getAttribute() получите значение
     каждого атрибута и выведите в консоль.
     -->
+    <script>
+        'use strict'
+
+        const divEl = document.querySelector('div');
+        divEl.addEventListener('click', event => {
+            console.log(event.target.getAttribute('class'));
+            console.log(event.target.getAttribute('id'));
+            console.log(event.target.getAttribute('tabindex'));
+            console.log(event.target.getAttribute('aria-labelledby'));
+            console.log(event.target.getAttribute('aria-hidden'));
+        });
+    </script>
 </body>
+
 </html>
